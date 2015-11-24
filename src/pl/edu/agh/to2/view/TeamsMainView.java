@@ -1,4 +1,4 @@
-package view;
+package pl.edu.agh.to2.view;
 
 import java.io.IOException;
 
