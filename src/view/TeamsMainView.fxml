@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TeamsMainController">
+	
+	<columnConstraints>
+		<ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+		<ColumnConstraints hgrow="SOMETIMES" maxWidth="502.0" minWidth="10.0" percentWidth="50.0" prefWidth="316.0" />
+		<ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+	</columnConstraints>
+	
+	<rowConstraints>
+		<RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+		<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+	</rowConstraints>
+	<children>
+		<Button fx:id="createTeamButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleCreateTeamAction" text="Create Team" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+	   <TextField fx:id="teamSearcherTextField" promptText="team name, leader name, etc." GridPane.columnIndex="1" />
+	   <Label text="Search:">
+	      <padding>
+	         <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+	      </padding>
+	   </Label>
+		<TableView fx:id="teamsTable" prefHeight="360.0" prefWidth="589.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+			<columns>
+				<TableColumn editable="false" resizable="false" minWidth="300.0" prefWidth="-1.0" text="Team name">
+					<cellValueFactory>
+						<PropertyValueFactory property="teamName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn editable="false" resizable="false" minWidth="300.0" prefWidth="-1.0" text="Team leader">
+					<cellValueFactory>
+						<PropertyValueFactory property="leader" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+	</children>
+</GridPane>

@@ -7,4 +7,17 @@ public class Member {
 	private Role role;
 	private Member supervisor;
 	private List<Member> subordinates;
+	
+	public Member(IWorker worker) {
+		super();
+		this.worker = worker;
+	}
+
+	@Override
+	public String toString() {
+		return worker.getName();
+	}
+	
+	
+	
 }
